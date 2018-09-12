@@ -16,7 +16,6 @@ const arrayAdditionI = array => {
     //get the value of the biggest num
     if (array[i] > array[i + 1] && array[i] > biggestNumber) {
       biggestNumber = array[i];
-      totalSum += array[i + 1];
     } else {
       totalSum += array[i];
     }
