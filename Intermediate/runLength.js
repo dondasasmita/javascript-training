@@ -6,16 +6,20 @@ and outputting that number along with a single character of the repeating sequen
 */
 
 const runLength = string => {
-  // Split the string into array1
+  // Split the string into array
   const arrayOfStrings = string.split("");
-  // Run countLetter function
+  // Run countLetter function and store to newArray
   let newArray = countLetter(arrayOfStrings);
-  // return the array from countLetter as string
-  return newArray;
 
-  // Insert them to array of objects
-  // {letter: , count:}
-  // Insert the attributes into array
+  // New array to store the count and letter as values
+  let newArray2 = [];
+  for (let i = 0; i < newArray.length; i++) {
+    newArray2.push(newArray[i].count);
+    newArray2.push(newArray[i].letter);
+  }
+
+  // Parse to String without the comma
+  return newArray2.join("").toString();
 };
 
 // Function to count letters and insert them into array of objects
@@ -35,9 +39,9 @@ const countLetter = letters => {
     letterAndCount.push(letterObj);
   }
 
-  // NOTE: Above 2 variables could be refactored and made simpler
+  // NOTE: Above 2 variables could be refactored
 
-  // Check letters againts letter in letterAndCount
+  // Check letters againts letter in letterAndCount AND count
   for (let i = 0; i < letters.length; i++) {
     for (let j = 0; j < uniqueLetters.length; j++) {
       if (letters[i] === letterAndCount[j].letter) {
@@ -49,6 +53,8 @@ const countLetter = letters => {
   return letterAndCount;
 };
 
-const donda = "donda";
-// console.log(countLetter(donda));
-console.log(runLength(donda));
+// RUN the codes
+const word = "donda";
+console.log(runLength(word));
+const word2 = "wwwggopp";
+console.log(runLength(word2));
