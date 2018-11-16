@@ -1,7 +1,7 @@
 /*
  * Have the function PrimeTime(num) take the num parameter being passed and return the string true if the parameter
  * is a prime number, otherwise return the string false. The range will be between 1 and 2^16.
-*/
+ */
 
 // a function that finds factors
 const findFactor = num =>
@@ -17,8 +17,4 @@ const PrimeTime = num => {
   }
 };
 
-console.log(PrimeTime(2)); // True
-console.log(PrimeTime(19)); // True
-console.log(PrimeTime(17)); // True
-console.log(PrimeTime(12)); // False
-console.log(PrimeTime(5)); // True
+module.exports = PrimeTime;
